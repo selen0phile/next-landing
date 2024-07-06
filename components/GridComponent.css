@@ -1,0 +1,60 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  display: flex;
+  justify-content: space-between;
+}
+.grid-container :not(:first-child) .image-container {
+  margin-top: -10%;
+}
+.image-container {
+  width: 50%;
+  height: 110%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 668px;
+  height: auto;
+  width: auto;
+  border-radius: 8px;
+}
+
+.text-container {
+  margin-top: 140px;
+  margin-left: 50px;
+  max-width: 400px;
+}
+
+.text-container h3 {
+  margin-top: 0;
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "SF UI Text";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 410;
+  line-height: 65px; /* 101.563% */
+  letter-spacing: -4.48px;
+}
+
+.text-container p {
+  margin: 0;
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "SF UI Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 410;
+  line-height: 29px; /* 145% */
+  letter-spacing: -0.4px;
+}

@@ -1,0 +1,78 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo-image {
+  width: 260px; /* Adjust as needed */
+  height: auto;
+  margin-right: 10px;
+}
+
+.footer-left p {
+  margin: 0;
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "SF UI Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 410;
+  line-height: 32px; /* 160% */
+  letter-spacing: -0.4px;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column; /* Stack contact and social vertically */
+  align-items: flex-start;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-contact span {
+  margin-right: 10px;
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: "SF UI Text";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 410;
+  line-height: 32px; /* 160% */
+  letter-spacing: -0.4px;
+}
+
+
+
+.footer-social {
+  display: flex;
+  margin-top: 10px;
+}
+
+.footer-social a {
+  margin-right: 10px;
+}
+
+.social-icon {
+  width: 30px; /* Adjust as needed */
+  height: auto;
+}
