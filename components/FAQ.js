@@ -21,8 +21,8 @@ export default function FAQ() {
       >
         Frequently Asked Questions
       </div>
-      {data.map((item) => (
-        <Accordion title={item.title} desc={item.data} />
+      {data.map((item, index) => (
+        <Accordion key={index} title={item.title} desc={item.data} />
       ))}
     </div>
   );

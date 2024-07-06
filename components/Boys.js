@@ -5,7 +5,7 @@ import { mobileBreakPoint } from "./Carousel";
 
 export default function Boys() {
   const screenWidth = useScreenWidth();
-  const [range, setRange] = useState([0,1,2]);
+  const [range, setRange] = useState([0, 1, 2]);
   useEffect(() => {
     if (screenWidth > mobileBreakPoint) {
       setRange([0, 1, 2]);
@@ -59,7 +59,7 @@ export default function Boys() {
     >
       <div
         style={{
-          fontSize: getSize(64, 36, screenWidth), 
+          fontSize: getSize(64, 36, screenWidth),
           letterSpacing: "-3px",
           lineHeight: getSize(65, 40, screenWidth),
           textAlign: "center",
@@ -74,7 +74,7 @@ export default function Boys() {
           textAlign: "center",
           width: getSize(852, 308, screenWidth),
           marginBottom: "60px",
-          fontSize: getSize(20,13,screenWidth),
+          fontSize: getSize(20, 13, screenWidth),
           lineHeight: getSize(29, 18, screenWidth),
           letter: "-1px",
           fontWeight: 410,
@@ -91,12 +91,12 @@ export default function Boys() {
           justifyContent: "space-between",
           width: "100%",
           marginBottom: "30px",
-          height: getSize(525,100,screenWidth),
-
+          height: getSize(525, 100, screenWidth),
         }}
       >
-        {range.map((id) => (
+        {range.map((id, index) => (
           <div
+            key={index}
             style={{
               width: screenWidth > mobileBreakPoint ? "381px" : "100%",
             }}
@@ -104,8 +104,14 @@ export default function Boys() {
             <img
               src={boys[id].image}
               style={{
-                height: screenWidth > mobileBreakPoint ? getSize(460, 353, screenWidth) : "100%",
-                width: screenWidth > mobileBreakPoint ? getSize(460, 353, screenWidth) : "100%",
+                height:
+                  screenWidth > mobileBreakPoint
+                    ? getSize(460, 353, screenWidth)
+                    : "100%",
+                width:
+                  screenWidth > mobileBreakPoint
+                    ? getSize(460, 353, screenWidth)
+                    : "100%",
                 overflow: "hidden",
                 objectFit: "cover",
                 borderRadius: "10px",
@@ -148,6 +154,7 @@ export default function Boys() {
       >
         {[1, 2, 3, 4, 5].map((item, index) => (
           <div
+            key={index}
             style={{
               borderRadius: "100%",
               border: "1px solid black",
