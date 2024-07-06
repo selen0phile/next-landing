@@ -3,32 +3,16 @@
 import React from "react";
 import { getSize } from "./util";
 import { useScreenWidth } from "./hooks";
+import { useSwipeable } from "react-swipeable";
 export const pcBreakPoint = 1024;
 
 export default function Carousel() {
   const screenWidth = useScreenWidth();
   const [index, setIndex] = React.useState(0);
-  const [touchStart, setTouchStart] = React.useState(0);
-  const [touchEnd, setTouchEnd] = React.useState(0);
-
-  function handleTouchStart(e) {
-    console.log(e);
-    setTouchStart(e.clientX);
-  }
-
-  function handleTouchMove(e) {
-    setTouchEnd(e.clientX);
-  }
-
-  function handleTouchEnd() {
-    if (touchStart - touchEnd > 150) {
-      nextSlide();
-    }
-
-    if (touchStart - touchEnd < -150) {
-      prevSlide();
-    }
-  }
+  const handlers = useSwipeable({
+    onSwipedRight: () => prevSlide(),
+    onSwipedLeft: () => nextSlide(),
+  });
 
   function nextSlide() {
     setIndex((index + 1) % data.length);
@@ -50,7 +34,7 @@ export default function Carousel() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
       text2: "Lorem ipsum dolor sit amet, consectetur",
       image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
-      backgroundColor: "lightblue",
+      backgroundColor: "red",
       textColor: "white",
     },
     {
@@ -58,22 +42,18 @@ export default function Carousel() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
       text2: "Lorem ipsum dolor sit amet, consectetur",
       image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
-      backgroundColor: "lightgreen",
+      backgroundColor: "green",
       textColor: "white",
     },
   ];
   return (
     <div
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onMouseDown={handleTouchStart}
-      onMouseMove={handleTouchMove}
-      onMouseUp={handleTouchEnd}
+      {...handlers}
       style={{
         backgroundColor: data[index].backgroundColor,
         color: data[index].textColor,
       }}
+      onClick={nextSlide}
       className={`duration-500 h-[471px] lg:h-[570px] block lg:flex justify-between relative ml-[20px] mr-[20px] p-[20px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px] text-[${data[index].textColor}]`}
     >
       <div
@@ -88,7 +68,6 @@ export default function Carousel() {
       >
         {data.map((_, i) => (
           <div
-            key={i}
             onClick={() => setIndex(i)}
             style={{
               cursor: "pointer",
