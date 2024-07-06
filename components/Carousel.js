@@ -7,49 +7,112 @@ export const pcBreakPoint = 1024;
 
 export default function Carousel() {
   const screenWidth = useScreenWidth();
+  const [index, setIndex] = React.useState(0);
+  const [touchStart, setTouchStart] = React.useState(0);
+  const [touchEnd, setTouchEnd] = React.useState(0);
+
+  function handleTouchStart(e) {
+    console.log(e);
+    setTouchStart(e.clientX);
+  }
+
+  function handleTouchMove(e) {
+    setTouchEnd(e.clientX);
+  }
+
+  function handleTouchEnd() {
+    if (touchStart - touchEnd > 150) {
+      nextSlide();
+    }
+
+    if (touchStart - touchEnd < -150) {
+      prevSlide();
+    }
+  }
+
+  function nextSlide() {
+    setIndex((index + 1) % data.length);
+  }
+  function prevSlide() {
+    setIndex((index - 1 + data.length) % data.length);
+  }
+  const data = [
+    {
+      text1:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
+      text2: "Lorem ipsum dolor sit amet, consectetur",
+      image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
+      backgroundColor: "#FFE4BE",
+      textColor: "black",
+    },
+    {
+      text1:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
+      text2: "Lorem ipsum dolor sit amet, consectetur",
+      image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
+      backgroundColor: "lightblue",
+      textColor: "white",
+    },
+    {
+      text1:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
+      text2: "Lorem ipsum dolor sit amet, consectetur",
+      image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
+      backgroundColor: "lightgreen",
+      textColor: "white",
+    },
+  ];
   return (
-    <div className="h-[471px] lg:h-[570px] block lg:flex justify-between relative bg-[#FFE4BE] ml-[20px] mr-[20px] p-[20px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px]">
+    <div
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onMouseDown={handleTouchStart}
+      onMouseMove={handleTouchMove}
+      onMouseUp={handleTouchEnd}
+      style={{
+        backgroundColor: data[index].backgroundColor,
+        color: data[index].textColor,
+      }}
+      className={`duration-500 h-[471px] lg:h-[570px] block lg:flex justify-between relative ml-[20px] mr-[20px] p-[20px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px] text-[${data[index].textColor}]`}
+    >
       <div
         style={{
           position: "absolute",
           bottom: "50px",
-          right: "50px",
+          right: "20px",
           display: "flex",
           justifyContent: "space-between",
           width: "75px",
         }}
       >
-        <div
-          style={{
-            borderRadius: "50%",
-            border: "1px solid black",
-            height: "13px",
-            width: "13px",
-          }}
-        ></div>
-        <div
-          style={{
-            borderRadius: "50%",
-            border: "1px solid black",
-            height: "13px",
-            width: "13px",
-          }}
-        ></div>
-        <div
-          style={{
-            borderRadius: "50%",
-            border: "1px solid black",
-            height: "13px",
-            width: "13px",
-          }}
-        ></div>
+        {data.map((_, i) => (
+          <div
+            onClick={() => setIndex(i)}
+            style={{
+              cursor: "pointer",
+              borderRadius: "50%",
+              border: "1px solid black",
+              height: "13px",
+              width: "13px",
+              backgroundColor: i === index ? "black" : "white",
+            }}
+          ></div>
+        ))}
       </div>
 
       <div className="flex flex-col justify-between">
-        <div className="text-[11px] lg:text-[16px] max-w-[600px] leading-[14px] lg:leading-[24px] mb-[30px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        <div
+          className="text-[11px] lg:text-[16px] max-w-[600px] leading-[14px] lg:leading-[24px] mb-[30px]"
+          style={
+            screenWidth < pcBreakPoint
+              ? {
+                  fontSize: getSize(16, 11, screenWidth),
+                }
+              : {}
+          }
+        >
+          {data[index].text1}
         </div>
         <div className="flex lg:hidden h-full items-center justify-center mb-[30px]">
           <img
@@ -57,8 +120,17 @@ export default function Carousel() {
             src="https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png"
           />
         </div>
-        <div className="text-[36px] lg:text-[80px] font-[410] leading-[40px] lg:leading-[80px] tracking-[-0.72px] lg:tracking-[-1.6px] max-w-[700px]">
-          Lorem ipsum dolor sit amet, consectetur
+        <div
+          style={
+            screenWidth < pcBreakPoint
+              ? {
+                  fontSize: getSize(80, 36, screenWidth),
+                }
+              : {}
+          }
+          className="text-[36px] lg:text-[80px] font-[410] leading-[40px] lg:leading-[80px] tracking-[-0.72px] lg:tracking-[-1.6px] max-w-[700px]"
+        >
+          {data[index].text2}
         </div>
       </div>
       <div className="hidden lg:flex justify-center items-center h-full">
