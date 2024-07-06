@@ -18,13 +18,18 @@ export default function Home() {
     <div style={{ maxWidth: "1440px", margin: "auto" }}>
       <Hero />
       <Carousel />
+      <div className="h-[100px]"></div>
       <About />
       {/* <GridComponent /> */}
+      <div className="h-[100px]"></div>
       <Boys />
+      <div className="h-[100px]"></div>
       <Violet />
+      <div className="h-[100px]"></div>
       <FAQ />
+      <div className="h-[100px]"></div>
       <FooterComponent />
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
     // <main className={styles.main}>
     //   <div className={styles.description}>

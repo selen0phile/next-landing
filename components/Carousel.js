@@ -3,12 +3,12 @@
 import React from "react";
 import { getSize } from "./util";
 import { useScreenWidth } from "./hooks";
-export const mobileBreakPoint = 800;
+export const pcBreakPoint = 1024;
 
 export default function Carousel() {
   const screenWidth = useScreenWidth();
   return (
-    <div className="h-[471px] lg:h-[570px] block lg:flex justify-between relative bg-[#FFE4BE] ml-[10px] mr-[10px] p-[20px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px]">
+    <div className="h-[471px] lg:h-[570px] block lg:flex justify-between relative bg-[#FFE4BE] ml-[20px] mr-[20px] p-[20px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px]">
       <div
         style={{
           position: "absolute",

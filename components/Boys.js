@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useScreenWidth } from "./hooks";
 import { getSize } from "./util";
-import { mobileBreakPoint } from "./Carousel";
+import { pcBreakPoint } from "./Carousel";
 
 export default function Boys() {
   const screenWidth = useScreenWidth();
   const [range, setRange] = useState([0, 1, 2]);
   useEffect(() => {
-    if (screenWidth > mobileBreakPoint) {
+    if (screenWidth > pcBreakPoint) {
       setRange([0, 1, 2]);
     } else {
       setRange([0]);
@@ -48,15 +48,7 @@ export default function Boys() {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: getSize(80, 20, screenWidth),
-      }}
-    >
+    <div className="flex flex-col items-center justify-center p-[20px] lg:p-[80px]">
       <div
         style={{
           fontSize: getSize(64, 36, screenWidth),
@@ -73,7 +65,7 @@ export default function Boys() {
         style={{
           textAlign: "center",
           width: getSize(852, 308, screenWidth),
-          marginBottom: "60px",
+          marginBottom: "30px",
           fontSize: getSize(20, 13, screenWidth),
           lineHeight: getSize(29, 18, screenWidth),
           letter: "-1px",
@@ -86,39 +78,27 @@ export default function Boys() {
         commodo consequat.
       </div>
       <div
+        className="flex w-full justify-center"
         style={{
           display: "flex",
           justifyContent: "space-between",
           width: "100%",
           marginBottom: "30px",
-          height: getSize(525, 100, screenWidth),
         }}
       >
         {range.map((id, index) => (
           <div
             key={index}
             style={{
-              width: screenWidth > mobileBreakPoint ? "381px" : "100%",
+              width: screenWidth > pcBreakPoint ? "381px" : "100%",
+              marginRight: screenWidth > pcBreakPoint ? "20px" : 0,
             }}
           >
             <img
               src={boys[id].image}
-              style={{
-                height:
-                  screenWidth > mobileBreakPoint
-                    ? getSize(460, 353, screenWidth)
-                    : "100%",
-                width:
-                  screenWidth > mobileBreakPoint
-                    ? getSize(460, 353, screenWidth)
-                    : "100%",
-                overflow: "hidden",
-                objectFit: "cover",
-                borderRadius: "10px",
-                marginBottom: "15px",
-              }}
+              className="overflow-hidden object-cover rounded-[10px] mb-[15px] w-full lg:w-[460px] max-h-[353px] lg:max-h-[460px]"
             />
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="flex justify-between">
               <div>
                 <div
                   style={{
@@ -152,15 +132,12 @@ export default function Boys() {
           display: "flex",
         }}
       >
-        {[1, 2, 3, 4, 5].map((item, index) => (
+        {[...Array(boys.length-3).keys()].map((item, index) => (
           <div
             key={index}
+            className="cursor-pointer border h-[13px] w-[13px] rounded-full border-black"
             style={{
-              borderRadius: "100%",
-              border: "1px solid black",
-              height: "13px",
-              width: "13px",
-              marginRight: index === 4 ? 0 : "12px",
+              marginRight: index === boys.length - 1 ? 0 : "12px",
               background: index === 0 ? "black" : "white",
             }}
           ></div>

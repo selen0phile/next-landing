@@ -2,7 +2,7 @@
 
 import React from "react";
 import { getSize } from "./util";
-import { mobileBreakPoint } from "./Carousel";
+import { pcBreakPoint } from "./Carousel";
 import { useScreenWidth } from "./hooks";
 
 const About = () => {
@@ -10,14 +10,29 @@ const About = () => {
   return (
     <div className="ml-[10px] mr-[10px] lg:ml-[100px] lg:mr-[100px]">
       <div className="max-w-[769px]">
-        <p className="text-left  font-[410] text-[22px] lg:text-[48px]">
+        <div
+          style={{
+            lineHeight: getSize(65, 28, screenWidth),
+            letterSpacing: getSize(-2, -1.54, screenWidth),
+            fontSize: getSize(48, 22, screenWidth),
+          }}
+        >
           The Stanford Ling Sound Test is an innovative digital platform
           designed for early detection of hearing impairment in children.
-        </p>
+        </div>
       </div>
       {/* <img src="/sinewave.png" style={{ height: "140px" }}></img> */}
+      <div className="h-[200px]"></div>
       <div className="w-full flex lg:block justify-center">
-        <div className="max-w-[238px] lg:max-w-[717px] text-[13px] lg:text-[20px] lg:float-right">
+        <div
+          style={{
+            fontSize: getSize(20, 13, screenWidth),
+            lineHeight: getSize(29, 18, screenWidth),
+            float: screenWidth > pcBreakPoint ? "right" : "none",
+            maxWidth: "338px"
+          }}
+          // className="max-w-[238px] lg:max-w-[717px] text-[13px] lg:text-[20px] lg:float-right"
+        >
           It transforms traditional hearing assessments into engaging, game-like
           experiences. Parents and Speech-Language Pathologists can administer
           the test remotely, track hearing health over time through interactive
@@ -28,7 +43,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="block lg:flex justify-between items-center w-full">
+      <div className="block lg:flex justify-between items-center w-full pt-[200px]">
         <div className="max-w-full lg:max-w-[50%] text-[36px] lg:text-[65px] leading-[36px] lg:leading-[65px] mb-[50px] lg:mb-0">
           <div className="text-[22px] lg:text-[48px] font-[410] leading-[36px] lg:leading-[65px] tracking-[-1.36px] lg:tracking-[-4px]">
             A project by
@@ -55,7 +70,7 @@ const About = () => {
             display: "flex",
             height: getSize(530, 354, screenWidth),
             width:
-              screenWidth > mobileBreakPoint
+              screenWidth > pcBreakPoint
                 ? getSize(530, 354, screenWidth)
                 : "100%",
             background: "#8C1515",

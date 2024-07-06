@@ -40,7 +40,7 @@ export default function Accordion({title, desc}) {
           fontWeight: 410,
           maxHeight: open ? "500px" : "0",
           overflow: "hidden",
-          transition: "max-height 0.3s ease-in-out",
+          transition: "max-height 0.3s ease-out, margin-bottom 0.3s ease-out",
           marginBottom: open ? "20px" : "0",
         }}
       >

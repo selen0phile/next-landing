@@ -1,18 +1,18 @@
-import { mobileBreakPoint } from "./Carousel";
+import { pcBreakPoint } from "./Carousel";
 import { useScreenWidth } from "./hooks";
 import { getSize } from "./util";
 
 export default function Violet() {
   const screenWidth = useScreenWidth();
   return (
-    <div className="block lg:flex justify-between relative bg-[#BCBAFF] ml-[10px] mr-[10px] p-[40px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px] lg:h-[570px]">
+    <div className="block lg:flex justify-between relative bg-[#BCBAFF] ml-[20px] mr-[20px] p-[40px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px] lg:h-[570px]">
       <div
         style={{
           maxWidth: "600px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          marginBottom: screenWidth > mobileBreakPoint ? "0" : "50px",
+          marginBottom: screenWidth > pcBreakPoint ? "0" : "50px",
         }}
       >
         <div
@@ -22,7 +22,7 @@ export default function Violet() {
             lineHeight: getSize(96, 48, screenWidth),
             letterSpacing: getSize(-4.48, -2.52, screenWidth),
             color: "#5F32BC",
-            marginBottom: screenWidth > mobileBreakPoint ? "0" : "50px",
+            marginBottom: screenWidth > pcBreakPoint ? "0" : "50px",
           }}
         >
           we are still developing...
@@ -53,35 +53,20 @@ export default function Violet() {
           color: "#5F32BC",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <div className="flex items-center mb-[20px]">
           <img
             src="/settings.png"
             style={{ width: "113px", marginRight: "40px" }}
           />
           <div>Early Development Phase</div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <div className="flex items-center mb-[20px]">
           <img src="/ear.png" style={{ width: "113px", marginRight: "40px" }} />
           <div>
             <b>NOT A REPLACEMENT</b> for Traditional Methods
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <div className="flex items-center mb-[20px]">
           <img
             src="/batti.png"
             style={{ width: "113px", marginRight: "40px" }}
