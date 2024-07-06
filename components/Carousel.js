@@ -88,6 +88,7 @@ export default function Carousel() {
       >
         {data.map((_, i) => (
           <div
+            key={i}
             onClick={() => setIndex(i)}
             style={{
               cursor: "pointer",
