@@ -35,11 +35,11 @@ const GridComponent = () => {
                   <img src={item.image} alt={item.text} />
                 </Reveal>
               </div>
-              <div className="= w-[300px] lg:w-[400px] lg:text-left lg:-mt-[200px] h-[400px] lg:h-[500px] flex flex-col text-center justify-center items-center mx-auto">
-                <div className="text-[36px] leading-[40px] lg:text-[64px] lg:leading-[65px] lg:-tracking-widest">
+              <div className="w-[300px] lg:w-[400px] lg:text-left lg:-mt-[200px] h-[400px] lg:h-[500px] flex flex-col text-center justify-center items-center mx-auto">
+                <div className="md:text-[50px] md:leading-[50px] text-[36px] leading-[40px] lg:text-[64px] lg:leading-[65px] lg:-tracking-widest">
                   <Reveal>{item.text}</Reveal>
                 </div>
-                <div className="text-[13px] leading-[18px] lg:text-[20px] lg:leading-[29px] mt-[60px]">
+                <div className="text-[13px] leading-[18px] md:text-[17px] md:leading-[23px] lg:text-[20px] lg:leading-[29px] mt-[60px]">
                   <Reveal>{item.description}</Reveal>
                 </div>
               </div>
@@ -51,11 +51,11 @@ const GridComponent = () => {
                   <img src={item.image} alt={item.text} />
                 </Reveal>
               </div>
-              <div className="w-[300px] lg:w-[400px] lg:text-left lg:mt-[200px] h-[500px] lg:h-[400px] flex flex-col text-center justify-center items-center mx-auto">
-                <div className="text-[36px] leading-[40px] lg:text-[64px] lg:leading-[65px] lg:-tracking-widest">
+              <div className="w-[300px] lg:w-[400px] lg:text-left lg:mt-[200px] h-[400px] lg:h-[500px] flex flex-col text-center justify-center items-center mx-auto">
+                <div className="md:text-[50px] md:leading-[50px] text-[36px] leading-[40px] lg:text-[64px] lg:leading-[65px] lg:-tracking-widest">
                   <Reveal>{item.text}</Reveal>
                 </div>
-                <div className="text-[13px] leading-[18px] lg:text-[20px] lg:leading-[29px] mt-[30px]">
+                <div className="text-[13px] leading-[18px] md:text-[17px] md:leading-[23px] lg:text-[20px] lg:leading-[29px] mt-[30px]">
                   <Reveal>{item.description}</Reveal>
                 </div>
               </div>

@@ -79,13 +79,7 @@ const SineWave = () => {
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        display: "block",
-        width: "100%",
-        height: "200px",
-        marginTop: "100px",
-        marginBottom: "100px",
-      }}
+      className="my-[50px] lg:my-[150px] block w-full h-[200px]"
     />
   );
 };

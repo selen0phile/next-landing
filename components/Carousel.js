@@ -45,12 +45,12 @@ export default function Carousel() {
     <section
       id="carousel"
       ref={targetRef}
-      className="relative h-[300vh] lg:h-[300vh] lg:ml-[100px] lg:mr-[100px] ml-[20px] mr-[20px]"
+      className="relative h-[300vh] md:ml-[50px] md:mr-[50px] lg:ml-[100px] lg:mr-[100px] ml-[20px] mr-[20px]"
     >
-      <div className="sticky top-20 lg:top-0 flex h-[700px] lg:h-[100vh] items-center overflow-x-scroll overflow-y-hidden no-scrollbar">
+      <div className=" sticky top-20 md:top-20 lg:top-20 flex h-[100vh] overflow-x-scroll overflow-y-hidden no-scrollbar">
         <motion.div
           style={{ x }}
-          className="flex lg:w-[3600px] w-[1200px] gap-4"
+          className="flex lg:w-[3600px] md:w-[2000px] w-[1200px] gap-4"
         >
           {data.map((card, index) => {
             return (
@@ -91,7 +91,7 @@ export function Card({
         backgroundColor: backgroundColor,
         color: textColor,
       }}
-      className={`h-[471px] lg:h-[570px] block lg:flex justify-between relative p-[20px] rounded-[20px] lg:p-[80px] lg:w-[1150px] w-full flex-shrink-0`}
+      className={`h-[471px] md:h-[570px] lg:h-[570px] block lg:flex justify-between relative p-[20px] rounded-[20px] lg:p-[80px] lg:w-[1150px] md:w-[600px] w-full flex-shrink-0`}
     >
       <div
         style={{
@@ -120,12 +120,12 @@ export function Card({
       </div>
 
       <div className="flex flex-col justify-between h-full">
-        <div className="text-[12px] lg:text-[16px] max-w-[600px] leading-[14px] lg:leading-[24px] mb-[30px]">
+        <div className="text-[12px] md:text-[14px] lg:text-[16px] max-w-[600px] leading-[14px] md:leading-[19px] lg:leading-[24px] mb-[30px]">
           {text1}
         </div>
         <div className="flex lg:hidden h-full items-center justify-center mb-[30px] ">
           <img
-            className="w-[132px] lg:w-[306px] h-[169px] lg:h-[391px]"
+            className="w-[132px] md:w-[219px] md:h-[280px] lg:w-[306px] h-[169px] lg:h-[391px]"
             src="https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png"
           />
         </div>

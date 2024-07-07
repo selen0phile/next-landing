@@ -25,15 +25,15 @@ const Hero = () => {
           zIndex: -1,
         }}
       />
-      <div className="w-[251px] lg:w-[1100px] flex flex-col justify-center h-full items-center mt-[230px]">
+      <div className="w-[251px] md:w-[700px] lg:w-[1100px] flex flex-col justify-center h-full items-center mt-[230px]">
         <div className="mb-[30px]">
           <Reveal width="100%">
-            <h1 className="text-center text-[40px] tracking-[-2px] leading-[57px] lg:text-[96px] lg:leading-[114px] lg:tracking-[-6px] font-bold">
+            <h1 className="md:text-[60px] md:leading-[80px] md:tracking-[-4px] text-center text-[40px] tracking-[-2px] leading-[57px] lg:text-[96px] lg:leading-[114px] lg:tracking-[-6px] font-bold">
               Joyful & Accessible
             </h1>
           </Reveal>
           <Reveal width="100%">
-            <h1 className="text-center text-[40px] tracking-[-2px] leading-[57px] lg:text-[96px] lg:leading-[114px] lg:tracking-[-6px] mb-[36px] lg:mb-[70px] font-bold">
+          <h1 className="md:text-[60px] md:leading-[80px] md:tracking-[-4px] text-center text-[40px] tracking-[-2px] leading-[57px] lg:text-[96px] lg:leading-[114px] lg:tracking-[-6px] font-bold mb-[50px]">
               Hearing Tests for All Kids
             </h1>
           </Reveal>
@@ -50,7 +50,9 @@ const Hero = () => {
           </Reveal>
         </div>
         <Reveal>
-          <Link href="#carousel"><Button text="Get Started" /></Link>
+          <Link href="#carousel">
+            <Button text="Get Started" />
+          </Link>
         </Reveal>
       </div>
       <div style={{ position: "absolute", bottom: -160, right: 0, zIndex: -1 }}>

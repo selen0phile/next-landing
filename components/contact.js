@@ -18,7 +18,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={styles.form}>
+    <form onSubmit={handleSubmit} style={styles.form} className="w-[300px] ">
       <div style={styles.row}>
         <div style={styles.inputGroup}>
           <label htmlFor="name" style={styles.label}>
@@ -73,7 +73,6 @@ const styles = {
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    maxWidth: "800px",
     margin: "0 40px",
     padding: "50px 30px",
     backgroundColor: "#000",

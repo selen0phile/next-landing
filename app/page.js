@@ -32,7 +32,7 @@ export default function Home() {
       <Hero />
       <div className="h-[240px]"></div>
       <Carousel />
-      <div id="process" className="h-[100px]"></div>
+      <div id="process" className="h-[20px]"></div>
       <About />
       <div id="features" className="h-[100px]"></div>
       <GridComponent />
