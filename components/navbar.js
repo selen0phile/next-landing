@@ -46,11 +46,7 @@ const Navbar = () => {
       className="max-w-[1440px] fixed z-20 flex w-[90%] justify-between items-center bg-white lg:h-[70px] h-[45px]  pr-[10px] pl-[10px] rounded-[15px] lg:mt-[30px] mt-[20px]"
     >
       <div>
-        <img
-          src="/logo.png"
-          className="h-[30px] lg:h-[48px]"
-          alt="logo"
-        />
+        <img src="/logo.png" className="h-[30px] lg:h-[48px]" alt="logo" />
       </div>
       <div
         style={{
@@ -105,7 +101,7 @@ const Navbar = () => {
         >
           {links.map((link, index) => (
             <Link
-              onClick={toggleMenu}
+              onClick={() => setShowMenu(false)}
               key={index}
               href={link.url}
               style={{ marginTop: "30px" }}

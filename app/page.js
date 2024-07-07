@@ -33,8 +33,9 @@ export default function Home() {
       <Carousel />
       <div id="about" className="h-[100px]"></div>
       <About />
-      {/* <GridComponent /> */}
-      <div className="h-[100px]"></div>
+      <div id="about" className="h-[100px]"></div>
+      <GridComponent />
+      <div className="h-[20px]"></div>
       <Boys />
       <div className="h-[100px]"></div>
       <Violet />

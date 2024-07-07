@@ -1,5 +1,6 @@
 import React from "react";
 import "./GridComponent.css"; // Import the CSS file
+import Reveal from "./Reveal";
 
 const GridComponent = () => {
   const data = [
@@ -24,29 +25,39 @@ const GridComponent = () => {
   ];
 
   return (
-    <div className="grid-container">
+    <div className="mb-0 lg:mb-[100px]">
       {data.map((item, index) => (
-        <div key={index} className="grid-item">
+        <div key={index} className="flex flex-col lg:flex-row lg:items-center">
           {index % 2 === 0 ? (
             <>
-              <div className="image-container">
-                <img src={item.image} alt={item.text} />
+              <div className="w-full lg:w-[50%] lg:-ml-[100px]">
+                <Reveal>
+                  <img src={item.image} alt={item.text} />
+                </Reveal>
               </div>
-              <div style={{ width: "50%" }}>
-                <div className="text-container">
-                  <h3>{item.text}</h3>
-                  <p>{item.description}</p>
+              <div className="= w-[300px] lg:w-[400px] lg:text-left lg:-mt-[200px] h-[400px] lg:h-[500px] flex flex-col text-center justify-center items-center mx-auto">
+                <div className="text-[36px] leading-[40px] lg:text-[64px] lg:leading-[65px] lg:-tracking-widest">
+                  <Reveal>{item.text}</Reveal>
+                </div>
+                <div className="text-[13px] leading-[18px] lg:text-[20px] lg:leading-[29px] mt-[60px]">
+                  <Reveal>{item.description}</Reveal>
                 </div>
               </div>
             </>
           ) : (
             <>
-              <div className="text-container">
-                <h3>{item.text}</h3>
-                <p>{item.description}</p>
+              <div className="w-full lg:w-[50%] lg:order-2 lg:-mt-[100px]">
+                <Reveal>
+                  <img src={item.image} alt={item.text} />
+                </Reveal>
               </div>
-              <div className="image-container">
-                <img src={item.image} alt={item.text} />
+              <div className="w-[300px] lg:w-[400px] lg:text-left lg:mt-[200px] h-[500px] lg:h-[400px] flex flex-col text-center justify-center items-center mx-auto">
+                <div className="text-[36px] leading-[40px] lg:text-[64px] lg:leading-[65px] lg:-tracking-widest">
+                  <Reveal>{item.text}</Reveal>
+                </div>
+                <div className="text-[13px] leading-[18px] lg:text-[20px] lg:leading-[29px] mt-[30px]">
+                  <Reveal>{item.description}</Reveal>
+                </div>
               </div>
             </>
           )}
