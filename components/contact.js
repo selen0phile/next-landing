@@ -18,14 +18,14 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={styles.form} className="w-[300px] ">
-      <div style={styles.row}>
+    <form onSubmit={handleSubmit} style={styles.form} className="mx-[20px]">
+      <div className="block lg:flex justify-between gap-[20px]">
         <div style={styles.inputGroup}>
           <label htmlFor="name" style={styles.label}>
             Name
           </label>
           <input
-            class="border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all focus:border-white focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            class="w-full border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all focus:border-white focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             type="text"
             id="name"
             value={name}
@@ -38,7 +38,7 @@ const ContactForm = () => {
             Email Address
           </label>
           <input
-            class="border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all focus:border-white focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            class="w-full border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all focus:border-white focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             type="text"
             id="email"
             value={email}
@@ -73,7 +73,6 @@ const styles = {
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    margin: "0 40px",
     padding: "50px 30px",
     backgroundColor: "#000",
     color: "#fff",

@@ -127,7 +127,7 @@ export default function Boys() {
                     <Button
                       text="Read Bio"
                       icon={false}
-                      className="h-[40px] text-[17px] px-[13px] leading-[19px] rounded-[17px]"
+                      className="h-[40px] text-[12px] px-[13px] leading-[19px] rounded-[17px]"
                     />
                   </div>
                 </div>
