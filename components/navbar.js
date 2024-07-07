@@ -64,6 +64,7 @@ const Navbar = () => {
         >
           {links.map((x, index) => (
             <div
+              key={index}
               style={{
                 backgroundColor: x.url == link ? "black" : "#F7EDDD", 
                 textAlign: "center",

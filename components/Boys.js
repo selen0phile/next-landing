@@ -81,7 +81,7 @@ export default function Boys() {
               >
                 <img
                   src={boy.image}
-                  className="overflow-hidden object-cover rounded-[10px] mb-[15px] w-full lg:w-[460px] max-h-[353px] lg:max-h-[460px]"
+                  className="overflow-hidden object-cover  rounded-[10px] mb-[15px] w-full lg:w-[460px] max-h-[353px] lg:max-h-[460px]"
                 />
                 <div className="flex justify-between">
                   <div>
