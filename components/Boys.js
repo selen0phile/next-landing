@@ -85,13 +85,12 @@ export default function Boys() {
       <div className="w-full justify-center mb-[30px]">
         <Slider {...settings}>
           {boys.map((boy, index) => (
-            <Reveal>
+            <Reveal key={index}>
               <div
                 // initial={{ opacity: 0, y: 250 }}
                 // animate={{ opacity: 1, y: 0 }}
                 // exit={{ opacity: 0, y: 250 }}
                 // transition={{ duration: 0.5, ease: "easeOut" }}
-                key={index}
                 style={{
                   padding: "10px",
                   // width: screenWidth > pcBreakPoint ? "381px" : "100%",

@@ -55,12 +55,12 @@ export default function Carousel() {
           {data.map((card, index) => {
             return (
               <motion.div
+                index={index}
                 initial={{ opacity: 0, y: 250 }}
                 whileInView={{ opacity: 1, y: 0, threshold: 0.99 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <Card
-                  index={index}
                   key={index}
                   text1={card.text1}
                   text2={card.text2}
