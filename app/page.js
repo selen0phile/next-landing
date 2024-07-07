@@ -14,6 +14,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useClient } from "@/components/hooks";
 import Navbar from "@/components/navbar";
+import SineWave from "@/components/Sine";
 
 export default function Home() {
   const settings = {

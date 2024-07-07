@@ -6,6 +6,7 @@ import { pcBreakPoint } from "./Carousel";
 import { useScreenWidth } from "./hooks";
 import SineWaveAnimation from "./sinewave";
 import Reveal from "./Reveal";
+import SineWave from "./Sine";
 
 const About = () => {
   const screenWidth = useScreenWidth();
@@ -19,7 +20,7 @@ const About = () => {
           </div>
         </Reveal>
       </div>
-      <div className="h-[200px]"></div>
+      <SineWave />
       <Reveal width="100%">
         <div className="w-full flex lg:block justify-center">
           <div className="max-w-[238px] lg:max-w-[717px] text-[13px] lg:text-[20px] lg:float-right">
