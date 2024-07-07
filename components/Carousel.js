@@ -55,7 +55,7 @@ export default function Carousel() {
           {data.map((card, index) => {
             return (
               <motion.div
-                index={index}
+                key={index}
                 initial={{ opacity: 0, y: 250 }}
                 whileInView={{ opacity: 1, y: 0, threshold: 0.99 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
