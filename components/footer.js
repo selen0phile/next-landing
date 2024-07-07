@@ -2,6 +2,8 @@ import React from "react";
 import "./FooterComponent.css"; // Import the CSS file
 import { useScreenWidth } from "./hooks";
 import { getSize } from "./util";
+import Reveal from "./Reveal";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 const FooterComponent = () => {
   const screenWidth = useScreenWidth();
@@ -9,15 +11,23 @@ const FooterComponent = () => {
     <footer className="lg:mr-[100px] lg:ml-[100px] mb-[50px]">
       <div className="block lg:flex justify-between items-center">
         <div className="flex items-center w-full justify-center lg:w-fit">
-          <img src="/logo.png" alt="SLST Logo" className="logo-image" />
+          <Reveal>
+            <img src="/logo.png" alt="SLST Logo" className="logo-image" />
+          </Reveal>
         </div>
         <div className="block lg:flex items-center">
           <div className="flex flex-col items-center mt-[60px] lg:mt-[0px]">
-            <div className="text-[16px] lg:text-[20px]">
-              Looking to collaborate?
-            </div>
+            <Reveal>
+              <div className="text-[16px] lg:text-[20px]">
+                Looking to collaborate?
+              </div>
+            </Reveal>
             &emsp;
-            <button className="contact-button">Get in Touch →</button>
+            <Reveal>
+              <button className="bg-black rounded-[10px] text-white flex items-center w-[210px] justify-center h-[60px]">
+                Get in Touch &nbsp; <HiOutlineArrowRight />
+              </button>
+            </Reveal>
           </div>
         </div>
       </div>

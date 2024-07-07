@@ -1,51 +1,34 @@
 "use client";
 
 import { useState } from "react";
+import { IoMdAdd } from "react-icons/io";
+import { IoMdRemove } from "react-icons/io";
+import Reveal from "./Reveal";
+import { Collapse } from "react-collapse";
 
-export default function Accordion({title, desc}) {
+export default function Accordion({ title, desc }) {
   const [open, setOpen] = useState(false);
   return (
-    <div
-      style={{
-        borderBottom: "1px solid #000000",
-        marginBottom: "25px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          fontSize: "24px",
-          lineHeight: "29px",
-          fontWeight: 500,
-          marginBottom: "20px",
-          justifyContent: "space-between",
-        }}
-      >
-        <div>{title}</div>
+    <div className="border-b border-black mb-[25px]">
+      <Reveal width="100%">
         <div
-          style={{
-            cursor: "pointer",
-            fontSize: "40px",
-          }}
+          className="flex text-[16px] lg:text-[24px] leading-[29px]  font-[500] justify-between items-center"
           onClick={() => setOpen(!open)}
         >
-          {open ? "-" : "+"}
+          <div>{title}</div>
+
+          <div className="cursor-pointer ml-[10px]">
+            {open ? <IoMdRemove size={20} /> : <IoMdAdd size={20} />}
+          </div>
         </div>
-      </div>
-      <div
-        style={{
-          fontSize: "16px",
-          lineHeight: "24px",
-          letter: "-2%",
-          fontWeight: 410,
-          maxHeight: open ? "500px" : "0",
-          overflow: "hidden",
-          transition: "max-height 0.3s ease-out, margin-bottom 0.3s ease-out",
-          marginBottom: open ? "20px" : "0",
-        }}
-      >
-        {desc}
-      </div>
+      </Reveal>
+      <Collapse isOpened={open}>
+        <br />
+        <div className="text-[12px] lg:text-[16px] font-[500] leading-[24px] tracking-[-2%]">
+          {desc}
+        </div>
+      </Collapse>
+      <br />
     </div>
   );
 }
