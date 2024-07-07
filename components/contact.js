@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React, { useState } from "react";
+import Button from "./Button";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -24,11 +25,11 @@ const ContactForm = () => {
             Name
           </label>
           <input
+            class="border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all focus:border-white focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
             type="text"
             id="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            style={styles.input}
             required
           />
         </div>
@@ -37,11 +38,11 @@ const ContactForm = () => {
             Email Address
           </label>
           <input
-            type="email"
+            class="border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all focus:border-white focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            type="text"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            style={styles.input}
             required
           />
         </div>
@@ -51,27 +52,30 @@ const ContactForm = () => {
           Your Message
         </label>
         <textarea
+          class="h-full min-h-[100px] w-full resize-none border-b border-white bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-white outline outline-0 transition-all focus:outline-0 disabled:resize-none disabled:border-0"
           id="message"
-          value={message}
+          name="message"
           onChange={(e) => setMessage(e.target.value)}
-          style={styles.textarea}
           required
-        />
+        ></textarea>
       </div>
-      <button type="submit" style={styles.button}>
-        Send
-      </button>
+      <Button
+        icon={false}
+        text="Send"
+        className="h-[35px] flex items-center justify-center absolute bottom-[55px] right-[20px] text-black bg-white hover:bg-gray-200 w-[100px] text-[16px] rounded-full"
+      />
     </form>
   );
 };
 
 const styles = {
   form: {
+    position: "relative",
     display: "flex",
     flexDirection: "column",
-    maxWidth: "600px",
-    margin: "0 20px",
-    padding: "20px",
+    maxWidth: "800px",
+    margin: "0 40px",
+    padding: "50px 30px",
     backgroundColor: "#000",
     color: "#fff",
     borderRadius: "20px",
@@ -108,23 +112,6 @@ const styles = {
     fontSize: "16px",
     minHeight: "100px",
     resize: "vertical",
-  },
-  button: {
-    width: "130px",
-    padding: "10px 20px",
-    backgroundColor: "#fff",
-    color: "#000",
-    border: "none",
-    borderRadius: "30px",
-    fontSize: "16px",
-    cursor: "pointer",
-    alignSelf: "flex-end",
-    color: "#000",
-fontFamily: "SF UI Display",
-fontSize: "20px",
-fontStyle: "normal",
-fontWeight: "500",
-lineHeight: "normal",
   },
 };
 

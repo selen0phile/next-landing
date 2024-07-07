@@ -43,6 +43,7 @@ export default function Carousel() {
 
   return (
     <section
+      id="carousel"
       ref={targetRef}
       className="relative h-[300vh] lg:h-[300vh] lg:ml-[100px] lg:mr-[100px] ml-[20px] mr-[20px]"
     >

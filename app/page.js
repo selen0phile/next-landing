@@ -32,11 +32,11 @@ export default function Home() {
       <Hero />
       <div className="h-[240px]"></div>
       <Carousel />
-      <div id="about" className="h-[100px]"></div>
+      <div id="process" className="h-[100px]"></div>
       <About />
-      <div id="about" className="h-[100px]"></div>
+      <div id="features" className="h-[100px]"></div>
       <GridComponent />
-      <div className="h-[20px]"></div>
+      <div id="" className="h-[20px]"></div>
       <Boys />
       <div className="h-[100px]"></div>
       <Violet />

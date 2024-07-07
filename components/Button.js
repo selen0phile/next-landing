@@ -11,7 +11,7 @@ export default function Button({ onClick, text, className, icon = true }) {
         "bg-black rounded-[10px] text-white flex items-center justify-center"
       }
     >
-      {text}{" "}
+      {text}
       {icon && (
         <>
           &nbsp; <HiOutlineArrowRight />

@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import { useScreenWidth } from "./hooks";
+import { pcBreakPoint } from "./Carousel";
+import { interpolate } from "./util";
 
 const SineWave = () => {
   const canvasRef = useRef(null);
+  const screenWidth = useScreenWidth();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -17,15 +21,16 @@ const SineWave = () => {
 
     const wave = {
       y: canvas.height / 2,
-      length: 0.02,
-      amplitude: 50,
+      length: interpolate(450, 0.05, 1920, 0.02, screenWidth),
+      amplitude: interpolate(450, 40, 1920, 50, screenWidth),
       frequency: 0.05,
+      lineWidth: interpolate(450, 4, 1920, 6, screenWidth),
     };
 
     const strokeColor = "red";
     const dotColor = "red";
-    const dotRadius = 3;
-    const dotSpacing = 230;
+    const dotRadius = interpolate(450, 3, 1920, 5, screenWidth);
+    const dotSpacing = interpolate(450, 120, 1920, 280, screenWidth);
     let increment = 0;
 
     function animate() {
@@ -35,7 +40,7 @@ const SineWave = () => {
 
       // Start drawing from the left edge
       ctx.moveTo(0, wave.y + Math.sin(increment) * wave.amplitude);
-      ctx.lineWidth = 4;
+      ctx.lineWidth = wave.lineWidth;
 
       for (let i = 0; i < canvas.width; i++) {
         ctx.lineTo(
@@ -69,7 +74,7 @@ const SineWave = () => {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, []);
+  }, [screenWidth]);
 
   return (
     <canvas

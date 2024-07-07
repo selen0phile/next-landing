@@ -7,6 +7,7 @@ import { useScreenWidth } from "./hooks";
 import { Box } from "@chakra-ui/react";
 import Reveal from "./Reveal";
 import Button from "./Button";
+import Link from "next/link";
 
 const Hero = () => {
   const screenWidth = useScreenWidth();
@@ -49,7 +50,7 @@ const Hero = () => {
           </Reveal>
         </div>
         <Reveal>
-          <Button text="Get Started" />
+          <Link href="#carousel"><Button text="Get Started" /></Link>
         </Reveal>
       </div>
       <div style={{ position: "absolute", bottom: -160, right: 0, zIndex: -1 }}>

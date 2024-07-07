@@ -6,3 +6,7 @@ export function getSize(pc, mobile, screenWidth) {
   const x = screenWidth;
   return `${Math.min(Math.floor(m * x + c), pc)}px`;
 }
+
+export function interpolate(x1,y1,x2,y2,x){
+  return y1 + (x-x1)*(y2-y1)/(x2-x1);
+}
