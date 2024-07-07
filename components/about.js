@@ -20,8 +20,8 @@ const About = () => {
         </Reveal>
       </div>
       <div className="h-[200px]"></div>
-      <div className="w-full flex lg:block justify-center">
-        <Reveal width="100%">
+      <Reveal width="100%">
+        <div className="w-full flex lg:block justify-center">
           <div className="max-w-[238px] lg:max-w-[717px] text-[13px] lg:text-[20px] lg:float-right">
             It transforms traditional hearing assessments into engaging,
             game-like experiences. Parents and Speech-Language Pathologists can
@@ -32,8 +32,8 @@ const About = () => {
             Stanford groups. User feedback is crucial for its ongoing
             improvement.
           </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
 
       <div className="block lg:flex justify-between items-center w-full pt-[200px]">
         <div className="max-w-full lg:max-w-[50%] text-[36px] lg:text-[65px] leading-[36px] lg:leading-[65px] mb-[50px] lg:mb-0">

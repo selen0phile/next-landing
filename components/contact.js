@@ -70,7 +70,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     maxWidth: "600px",
-    margin: "0 auto",
+    margin: "0 20px",
     padding: "20px",
     backgroundColor: "#000",
     color: "#fff",

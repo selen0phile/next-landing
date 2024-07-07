@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'SF UI Text';
-    src: url('/fonts/SFUIText-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "SF UI Text";
+  src: url("/fonts/SFUIText-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 * {
   font-family: "SF UI Text";
@@ -17,8 +17,8 @@
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 body {
@@ -49,7 +49,7 @@ button:hover {
 }
 .readBioButton {
   background: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 17px;
   font-size: 16px;
   height: 40px;
@@ -61,4 +61,16 @@ button:hover {
 
 .ReactCollapse--collapse {
   transition: height 500ms;
+}
+.slick-dots {
+  top: 105%;
+  list-style-type: none;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
 }

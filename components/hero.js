@@ -6,6 +6,7 @@ import { getSize } from "./util";
 import { useScreenWidth } from "./hooks";
 import { Box } from "@chakra-ui/react";
 import Reveal from "./Reveal";
+import Button from "./Button";
 
 const Hero = () => {
   const screenWidth = useScreenWidth();
@@ -48,9 +49,7 @@ const Hero = () => {
           </Reveal>
         </div>
         <Reveal>
-          <button className="bg-black rounded-[10px] text-white flex items-center w-[190px] justify-center h-[60px]">
-            Get Started &nbsp; <HiOutlineArrowRight />
-          </button>
+          <Button text="Get Started" />
         </Reveal>
       </div>
       <div style={{ position: "absolute", bottom: -160, right: 0, zIndex: -1 }}>

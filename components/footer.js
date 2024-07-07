@@ -4,11 +4,24 @@ import { useScreenWidth } from "./hooks";
 import { getSize } from "./util";
 import Reveal from "./Reveal";
 import { HiOutlineArrowRight } from "react-icons/hi";
+import Modal from "./Modal";
+import ContactForm from "./contact";
+import { AnimatePresence } from "framer-motion";
+import Button from "./Button";
 
 const FooterComponent = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   const screenWidth = useScreenWidth();
   return (
     <footer className="lg:mr-[100px] lg:ml-[100px] mb-[50px]">
+      <AnimatePresence initial={false} mode="wait">
+        {isOpen && (
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+            <ContactForm />
+          </Modal>
+        )}
+      </AnimatePresence>
+
       <div className="block lg:flex justify-between items-center">
         <div className="flex items-center w-full justify-center lg:w-fit">
           <Reveal>
@@ -24,9 +37,7 @@ const FooterComponent = () => {
             </Reveal>
             &emsp;
             <Reveal>
-              <button className="bg-black rounded-[10px] text-white flex items-center w-[210px] justify-center h-[60px]">
-                Get in Touch &nbsp; <HiOutlineArrowRight />
-              </button>
+              <Button onClick={()=>setIsOpen(true)} text="Get in Touch" />
             </Reveal>
           </div>
         </div>

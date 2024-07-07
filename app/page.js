@@ -14,7 +14,15 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useClient } from "@/components/hooks";
 import Navbar from "@/components/navbar";
+
 export default function Home() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+  };
   return (
     <div style={{ maxWidth: "1440px", margin: "auto" }}>
       <div className="relative w-full bg-red flex justify-center">
@@ -34,8 +42,6 @@ export default function Home() {
       <FAQ />
       <div id="contact" className="h-[100px]"></div>
       <FooterComponent />
-      {/* <ContactForm /> */}
     </div>
-    
   );
 }

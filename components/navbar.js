@@ -43,7 +43,7 @@ const Navbar = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed z-20 flex w-[90%] justify-between items-center bg-white lg:h-[70px] h-[45px]  pr-[10px] pl-[10px] rounded-[15px] lg:mt-[30px] mt-[20px]"
+      className="max-w-[1440px] fixed z-20 flex w-[90%] justify-between items-center bg-white lg:h-[70px] h-[45px]  pr-[10px] pl-[10px] rounded-[15px] lg:mt-[30px] mt-[20px]"
     >
       <div>
         <img

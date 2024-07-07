@@ -23,7 +23,7 @@ export default function Carousel() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
       text2: "Lorem ipsum dolor sit amet, consectetur",
       image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
-      backgroundColor: "red",
+      backgroundColor: "#0000ff88",
       textColor: "white",
     },
     {
@@ -31,8 +31,8 @@ export default function Carousel() {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut",
       text2: "Lorem ipsum dolor sit amet, consectetur",
       image: "https://gcdnb.pbrd.co/images/MDGHm6dtAL3P.png",
-      backgroundColor: "green",
-      textColor: "white",
+      backgroundColor: "#00ff0088",
+      textColor: "black",
     },
   ];
   const { scrollYProgress } = useScroll({
@@ -47,7 +47,10 @@ export default function Carousel() {
       className="relative h-[300vh] lg:h-[300vh] lg:ml-[100px] lg:mr-[100px] ml-[20px] mr-[20px]"
     >
       <div className="sticky top-20 lg:top-0 flex h-[700px] lg:h-[100vh] items-center overflow-x-scroll overflow-y-hidden no-scrollbar">
-        <motion.div style={{ x }} className="flex lg:w-[3600px] w-[1200px] gap-4">
+        <motion.div
+          style={{ x }}
+          className="flex lg:w-[3600px] w-[1200px] gap-4"
+        >
           {data.map((card, index) => {
             return (
               <motion.div
