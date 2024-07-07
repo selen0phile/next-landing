@@ -1,12 +1,16 @@
+import { useInView } from "framer-motion";
 import { pcBreakPoint } from "./Carousel";
 import Reveal from "./Reveal";
 import { useScreenWidth } from "./hooks";
 import { getSize } from "./util";
+import { useContext, useEffect } from "react";
+import { GlobalStateContext } from "./GlobalContext";
 
 export default function Violet() {
   const screenWidth = useScreenWidth();
   return (
-    <div className="block lg:flex justify-between relative bg-[#BCBAFF] ml-[20px] mr-[20px] p-[40px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px] lg:h-[570px]">
+    <div className="block lg:flex justify-between relative bg-[#BCBAFF] ml-[20px] mr-[20px] p-[40px] rounded-[20px] lg:ml-[100px] lg:mr-[100px] lg:p-[80px] lg:h-[570px]"
+    >
       <div className="flex flex-col justify-between mb-[50px] lg:mb-0 max-w-[600px]">
         <Reveal>
           <div className="text-[48px] lg:text-[96px] font-[410] leading-[48px] lg:leading-[96px] tracking-[-2.52px] lg:tracking-[-4.48px] text-[#5F32BC] mb-[50px] lg:mb-0">

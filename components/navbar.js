@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import {
@@ -10,15 +10,17 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { GlobalStateContext } from "./GlobalContext";
 const Navbar = () => {
   useEffect(() => {
     document.addEventListener("mousedown", () => setShowMenu(false));
   }, []);
 
+  const { link, setLink } = useContext(GlobalStateContext);
+
   const links = [
-    { title: "About", url: "/#about" },
-    { title: "Features", url: "/#features" },
-    { title: "Process", url: "/#process" },
+    { title: "About", url: "#about" },
+    { title: "Features", url: "#features" },
     { title: "Disclaimer", url: "#disclaimer" },
     { title: "FAQs", url: "#faq" },
     { title: "Contact", url: "#contact" },
@@ -48,37 +50,41 @@ const Navbar = () => {
       <div>
         <img src="/logo.png" className="h-[30px] lg:h-[48px]" alt="logo" />
       </div>
-      <div
-        style={{
-          backgroundColor: "#F7EDDD",
-          textAlign: "center",
-          justifyContent: "center",
-          color: "#000",
-          fontFamily: "SF UI Display",
-          fontSize: "16px",
-          fontStyle: "normal",
-          fontWeight: "500",
-          lineHeight: "normal",
-          borderRadius: "22.5px",
-        }}
-      >
-        <div></div>
-        <div className="hidden lg:block">
-          <ul
-            style={{
-              listStyle: "none",
-              display: "flex",
-              justifyContent: "space-between",
-              textAlign: "center",
-              padding: "10px",
-            }}
-          >
-            {links.map((link, index) => (
-              <Link className="w-[92px]" key={index} href={link.url}>
-                {link.title}
+
+      <div className="hidden lg:block">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            textAlign: "center",
+            padding: "2px",
+            backgroundColor: "#F7EDDD",
+            borderRadius: "22.5px",
+          }}
+        >
+          {links.map((x, index) => (
+            <div
+              style={{
+                backgroundColor: x.url == link ? "black" : "#F7EDDD", 
+                textAlign: "center",
+                justifyContent: "center",
+                color: x.url == link ? "white" : "black",
+                fontFamily: "SF UI Display",
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: "500",
+                lineHeight: "normal",
+                borderRadius: "22.5px",
+                border: x.url == link ? "4px solid #F7EDDD" : "none",
+                padding: x.url == link ? "6px" : "8px",
+                width: "100px",
+              }}
+            >
+              <Link key={index} href={x.url}>
+                {x.title}
               </Link>
-            ))}
-          </ul>
+            </div>
+          ))}
         </div>
       </div>
       <div className="flex items-center">

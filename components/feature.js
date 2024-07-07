@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./GridComponent.css"; // Import the CSS file
 import Reveal from "./Reveal";
+
+import { useInView } from "react-intersection-observer";
+import { GlobalStateContext } from "./GlobalContext";
 
 const GridComponent = () => {
   const data = [

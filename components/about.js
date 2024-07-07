@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { getSize } from "./util";
 import { pcBreakPoint } from "./Carousel";
 import { useScreenWidth } from "./hooks";
 import SineWaveAnimation from "./sinewave";
 import Reveal from "./Reveal";
 import SineWave from "./Sine";
+import { GlobalStateContext } from "./GlobalContext";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
   const screenWidth = useScreenWidth();

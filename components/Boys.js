@@ -40,24 +40,6 @@ export default function Boys() {
       image: "/boy3.png",
       bio: "#",
     },
-    {
-      name: "Lorem Ipsum Lorem",
-      designation: "Designation",
-      image: "/boy3.png",
-      bio: "#",
-    },
-    {
-      name: "Lorem Ipsum Lorem",
-      designation: "Designation",
-      image: "/boy1.png",
-      bio: "#",
-    },
-    {
-      name: "Lorem Ipsum Lorem",
-      designation: "Designation",
-      image: "/boy2.png",
-      bio: "#",
-    },
   ];
   const settings = {
     dots: true,
